@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  reactjs-docker-example:
+    image: reactjs-docker-example:dev
+    container_name: reactjs-docker-example
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile.dev
+    environment:
+      NODE_ENV: development
+    volumes: 
+      - ../:/app
+    ports:
+      - 3000:3000
+    command: yarn start

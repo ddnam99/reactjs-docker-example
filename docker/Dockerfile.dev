@@ -1,0 +1,11 @@
+FROM node:12.22.1-alpine
+LABEL author="Duong Duc Nam <nampt1999@gmail.com>"
+
+WORKDIR /app
+RUN apk add yarn
+RUN npm install react-scripts -g --silent
+
+COPY ["package.json", "yarn.lock", "./"]
+RUN yarn install --silent
+
+EXPOSE 3000

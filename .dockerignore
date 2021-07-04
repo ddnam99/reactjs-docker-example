@@ -1,4 +1,5 @@
 docker/**.prod**
+docker/**.dev**
 node_modules/**
 
 .dockerignore
